@@ -52,10 +52,10 @@ class BooksApp extends React.Component {
       const loadSpinners = {}
       
       if(targetShelf){
-        //loadSpinners[targetShelf]=true;
+        loadSpinners[targetShelf]=true;
       }
       if(book.shelf){
-        //loadSpinners[book.shelf]=true;
+        loadSpinners[book.shelf]=true;
       }
       
       this.setState({ loadShelvesSpinner: loadSpinners, movingBook:true});

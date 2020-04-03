@@ -70,7 +70,7 @@ class ListBooks extends React.Component {
                                                                     <div className="book-top">
                                                                         <div className="book-cover" style={{backgroundImage:`url(${(book.imageLinks && book.imageLinks.thumbnail)? book.imageLinks.thumbnail:''})`}}></div>
                                                                         <div className="book-shelf-changer">
-                                                                        <select onChange={(event)=>this.handleBookMove(event,book)} defaultValue={currentShelf.name}>
+                                                                        <select onChange={(event)=>this.handleBookMove(event,book)} defaultValue={book.shelf}>
                                                                             <option value="move" disabled >Move to...</option>
                                                                             <option value="currentlyReading">Currently Reading</option>
                                                                             <option value="wantToRead">Want to Read</option>
@@ -95,12 +95,7 @@ class ListBooks extends React.Component {
                                                         
                                                 )}
                                             </ol>
-                                            {/*** Loading Shelf spinner before API request completes for moving book */}
-                                            {(movingBook) && (
-                                                <div className="book-page-move-loader">
-                                                    <img src={searchPreloader} alt="Books Move Loader" />
-                                                </div>
-                                            )}
+                                            
                                         </div>
                                     </div>
                                 );
